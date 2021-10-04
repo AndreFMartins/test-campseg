@@ -43,25 +43,27 @@
       </b-form-group>
       <b-form-group label="Perfil" v-slot="{ ariaDescribedby }">
         <b-form-radio
-          v-model="payload.role"
+          v-for="(role, idx) in roles"
+          :key="idx"
+          v-model="payload.role_id"
           :aria-describedby="ariaDescribedby"
-          :disabled="getUserData.role === 'admin' && payload.id === getUserData.id"
-          name="profile"
-          value="admin"
-          >Administrador</b-form-radio
-        >
-        <b-form-radio
-          v-model="payload.role"
-          :aria-describedby="ariaDescribedby"
-          :disabled="getUserData.role === 'admin' && payload.id === getUserData.id"
-          name="profile"
-          value="common"
-          >Comum</b-form-radio
+          :disabled="
+            getUserData.role === 'admin' && payload.id === getUserData.id
+          "
+          name="role"
+          :value="role.id"
+          >{{ role.description }}</b-form-radio
         >
       </b-form-group>
 
-      <b-form-group >
-        <b-button type="submit" variant="dark" size="lg" block :disabled="loading">
+      <b-form-group>
+        <b-button
+          type="submit"
+          variant="dark"
+          size="lg"
+          block
+          :disabled="loading"
+        >
           <b-spinner v-if="loading" small />
           Salvar
         </b-button>
@@ -73,6 +75,7 @@
 import Vue from 'vue';
 import { mapGetters } from 'vuex';
 import UserRequest from '@/domain/users/UserRequest';
+import RoleRequest from '@/domain/users/RoleRequest';
 
 const defaultPayload = () => ({
   id: null as null | number,
@@ -80,15 +83,22 @@ const defaultPayload = () => ({
   username: '',
   password: '',
   password_confirmation: null,
-  role: 'common',
+  role_id: null,
 });
 export default Vue.extend({
   name: 'UserModal',
   data: () => ({
     payload: defaultPayload(),
     loading: false,
+    roles: [],
   }),
+  mounted() {
+    RoleRequest.list().then(({ data }) => {
+      this.roles = data;
+    });
+  },
   computed: mapGetters({ getUserData: 'getUserData' }),
+
   methods: {
     formReset() {
       this.payload = defaultPayload();

@@ -1,7 +1,12 @@
 <template>
   <b-container fluid>
     <b-row class="py-md-5 logo justify-content-center">
-      <b-col lg="6" xl="3" md="8" class="bg-white auth-area p-5 rounded text-center">
+      <b-col
+        lg="6"
+        xl="3"
+        md="8"
+        class="bg-white auth-area p-5 rounded text-center"
+      >
         <img src="images/campseg.jpg" class="rounded mb-2" />
         <b-form
           @submit.prevent="login"
@@ -67,7 +72,7 @@ export default Vue.extend({
           this.$store.commit('GET_USER_INFORMATION');
         })
         .catch(({ response }) => {
-          if (response.status === 422) {
+          if (response?.status === 422) {
             const message: string = Object.values<string>(response.data.errors).shift()
               ?? 'Formulário possui dados inválidos';
             this.$swal({

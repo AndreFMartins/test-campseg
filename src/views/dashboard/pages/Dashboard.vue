@@ -1,7 +1,9 @@
 <template>
   <b-container>
     <b-row>
-      <b-col class="align-self-center"> <RegisteredUsers v-if="getUserData.role === 'admin'" /> </b-col>
+      <b-col class="align-self-center">
+        <RegisteredUsers v-if="getUserData.role === 'admin'" />
+      </b-col>
       <b-col> <OnlineUsersComponent /> </b-col>
     </b-row>
   </b-container>

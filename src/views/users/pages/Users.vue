@@ -34,9 +34,11 @@
               <td>{{ item.name }}</td>
               <td>{{ item.username }}</td>
               <td class="text-center">
-                <b-badge :variant="item.role === 'admin' ? 'success' : 'danger'">{{
-                  item.role === "a" ? "Sim" : "Não"
-                }}</b-badge>
+                <b-badge
+                  :variant="item.role_name === 'admin' ? 'success' : 'primary'"
+                >
+                  {{ item.role }}</b-badge
+                >
               </td>
               <td style="width: 80px" class="text-center">
                 <b-icon

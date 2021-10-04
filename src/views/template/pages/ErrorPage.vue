@@ -1,8 +1,8 @@
 <template>
   <b-container
-    class="vh-100 d-flex flex-column align-items-center justify-content-center"
+    class="vh-100 d-flex flex-column align-items-center  text-white justify-content-center"
   >
-    <span style="font-size: 80px">&times;</span>
+    <span style="font-size: 200px">{{ forbidden ? "403" : "404" }}</span>
     <h1>
       Ops, {{ forbidden ? "você não pode continuar" : "página não encontrada" }}
     </h1>
@@ -11,7 +11,9 @@
         : "Verifique o endereço digitado e tente novamente" }}
     </p>
     <b-btn
-      class="mt-5"
+      class="mt-5 text-white"
+      variant="warning"
+      size="lg"
       @click="$router.push({ name: $auth.check() ? 'dashboard' : 'auth' })"
     >
       <b-icon icon="arrow-left" />
