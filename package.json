@@ -1,0 +1,50 @@
+{
+  "name": "test-campseg",
+  "version": "1.0.0",
+  "author": "André Martins",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.4",
+    "@websanova/vue-auth": "^4.1.4",
+    "apexcharts": "^3.28.3",
+    "axios": "^0.21.4",
+    "bootstrap": "~4.6.0",
+    "bootstrap-vue": "^2.21.2",
+    "core-js": "^3.6.5",
+    "es6-promise": "^4.2.8",
+    "jquery": "^1.9.1",
+    "jwt-decode": "^3.1.2",
+    "querystring": "^0.2.1",
+    "vue": "^2.6.11",
+    "vue-apexcharts": "^1.6.2",
+    "vue-axios": "^3.3.6",
+    "vue-izitoast": "^1.2.1",
+    "vue-router": "^3.2.0",
+    "vue-sweetalert2": "^5.0.2",
+    "vuex": "^3.4.0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.31.1",
+    "@typescript-eslint/parser": "^4.31.1",
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-plugin-router": "~4.5.0",
+    "@vue/cli-plugin-typescript": "~4.5.0",
+    "@vue/cli-plugin-vuex": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "@vue/eslint-config-airbnb": "^5.0.2",
+    "@vue/eslint-config-typescript": "^7.0.0",
+    "eslint": "^6.7.2",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-vue": "^7.17.0",
+    "node-sass": "^4.12.0",
+    "sass-loader": "^8.0.2",
+    "typescript": "~4.1.5",
+    "vue-template-compiler": "^2.6.11"
+  }
+}
