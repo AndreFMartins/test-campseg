@@ -14,7 +14,7 @@ Foi solicitado a inserção de um usuário administrador no sistema para o geren
 **Usuário: admin \
 Senha: 123mudar**
 
-Para facilitar a criação de usuários administradores, no cadastro de usuários tem a opção "Usuário Administrador?" que tem a finalidade de promover usuários à administração do sistema.
+Para facilitar a criação de usuários administradores, no cadastro de usuários tem a opção "Administrador" que tem a finalidade de promover usuários à administração do sistema.
 
 Foi inserido uma restrição para que um administrador não possa modificar seu  proprio papel e a executar a exclusão de sí mesmo, essa decisão foi pensada com o intuito de evitar que o administrador perca o acesso por equivoco. 
 
